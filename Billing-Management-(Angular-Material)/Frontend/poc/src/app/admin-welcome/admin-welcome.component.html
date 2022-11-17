@@ -1,0 +1,48 @@
+<header align="center"><h2 style="font-weight: bolder;">Hello Welcome to BizEx Platform</h2></header>
+
+<div class="content" *ngIf="loginService.isAdmin()">
+    <mat-card class="mat-elevation-z8" style="background-color: khaki;">
+        <mat-card-header>
+            <mat-card-title>
+                Registered Client Companies
+            </mat-card-title>
+            <mat-card-content>
+                <mat-icon>account_balance</mat-icon>
+                <br>
+                <p style="font-weight: bolder;">{{clientCompanies}}</p>
+            </mat-card-content>
+        </mat-card-header>
+    </mat-card>
+</div>
+<div class="content1" *ngIf="loginService.isAdmin()">
+    <mat-card class="mat-elevation-z8" style="background-color: khaki;">
+        <mat-card-header>
+            <mat-card-title>
+                Registered Vendor Companies
+            </mat-card-title>
+
+            
+            <mat-card-content>
+                <mat-icon>account_balance</mat-icon>
+                <br>
+                <p style="font-weight: bolder;">{{vendorCompanies}}</p>
+            </mat-card-content>
+        </mat-card-header>
+    </mat-card>
+</div>
+
+<div class="content2" *ngIf="loginService.isAdmin()">
+    <mat-card class="mat-elevation-z8" style="background-color: khaki;">
+        <mat-card-header>
+            <mat-card-title>
+                Total Onboarded Users
+            </mat-card-title>
+            <mat-card-content>
+                <mat-icon>supervisor_account</mat-icon>
+                <br>
+                <p style="font-weight: bolder;">{{totalUsers}}</p>
+            </mat-card-content>
+        </mat-card-header>
+    </mat-card>
+</div>
+

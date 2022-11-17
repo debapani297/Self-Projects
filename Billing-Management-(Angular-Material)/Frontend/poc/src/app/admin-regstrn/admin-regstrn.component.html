@@ -1,0 +1,36 @@
+<!-- <h2 align="center">Hello Welcome to Registration Page</h2>
+  <body>
+    <div>
+      <form>
+        <p>User Name</p>
+        <input type="text" placeholder="Enter a valid User Name">
+        <p>Password</p>
+        <input type="password" placeholder="Enter a valid password">
+        <button (click)="register()">Register</button>
+      </form>
+    </div>
+  </body> -->
+  
+  
+  
+ <body>
+  <mat-card class="card">
+   
+    <form [formGroup]="regForm">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Register here!!</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <p>User Name</p>
+    <input matInput placeholder="Enter User Name" formControlName="user">
+
+    <p>Password</p>
+    <input matInput placeholder="Enter Password" formControlName="pwd">
+    <mat-card-actions>
+      <button  class="button" (click)="register()">Register</button>
+    </mat-card-actions>
+  </form>
+  </mat-card>
+</body>
+
