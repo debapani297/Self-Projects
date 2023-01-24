@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Issue-Tracker</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>
+            Issue-Tracker Application
+        </h1>
+        <hr>
+
+       
+
+        <form id="frm1">
+            Issue description: <br/>
+            <input class="issueInput" type="text" id="title"><br>
+            <br/>
+            Priority:
+            <select id = 'priority'>
+                <option value = 'Low'>Low</option>
+                <option value = 'Medium'>Medium</option>
+                <option value = 'High'>High</option>
+            </select>
+            <br/>
+            Date: <input type="date" id="date"><br>
+            <br/>
+            Assigned to: <input type="text" id="assignedTo"><br><br>
+            <input type="button" onclick="issueList.addIssue()" value="Submit">
+        </form>
+
+        <br/>
+
+        <h6>Filter by:
+            <select id = "FilterPriority">
+                <option value = 'All'>All</option>
+                <option value = 'Low'>Low</option>
+                <option value = 'Medium'>Medium</option>
+                <option value = 'High'>High</option>
+            </select>
+            <input type="button" onclick="issueList.filterByPriority()" value="Submit">
+        </h6>
+        <br/>
+
+        <div class="columns">
+            <div class="column">
+            <span onclick="issueList.displayIssue()">
+                Issues
+            </span>
+            </div>
+            
+            <div class="column">
+            <span onclick="issueList.displayClosedIssues()">
+                Closed Issues
+            </span>
+            </div>
+        </div>
+        <br />
+        <div class="control" id='issueControl'>
+
+        </div>
+
+        <footer>
+            <p id="f1">For any queries, Contact us at:</p>
+            <p id="f2">abc@xyz.com</p>
+        </footer>
+
+    </body>
+    <script type="text/javascript" src="index.js"></script>
+
+</html>
