@@ -1,0 +1,130 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        
+       Contract Upload
+        <!-- <div class="spacer"></div>
+       <button mat-raised-button color="accent" (click)="logout()">LogOut</button> -->
+    
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>Contract Creation</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+        <mat-card>
+            <form [formGroup]="contractUpload">
+                <table  cellspacing="0">
+                                                                        <tr>
+                        <td>
+                            <mat-form-field >
+                                <input matInput placeholder="Vendor" name="vendorName" 
+                                    formControlName="vendorName" readonly="true">
+                            </mat-form-field>
+                        </td>
+                       
+                        <td>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Client</mat-label>
+                                <mat-select [(value)]="clientName" formControlName="client">
+                                    <mat-option>None</mat-option>
+                                    <mat-option *ngFor="let c of clientsCompanies" value={{c.companyId}}>{{c.companyName}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error>
+                        
+                            </mat-error>
+                            
+
+
+                        </td>
+                        
+                    </tr>
+                    <!-- {{x|date:"M:d:H"}} -->
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <input matInput [matDatepicker]="startDate" formControlName="fromDate" placeholder="Choose Start date">
+                                <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                                <mat-datepicker #startDate></mat-datepicker>
+                             </mat-form-field>
+
+                        </td>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <input matInput [matDatepicker]="endDate" formControlName="toDate" placeholder="Choose End date">
+                                <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                                <mat-datepicker #endDate></mat-datepicker>
+                             </mat-form-field>
+
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field >
+                                <input matInput placeholder="Contract Amount" name="contractAmount"
+                                    formControlName="contractAmount">
+                            </mat-form-field>
+                            
+                                
+                             
+                        </td>
+                        <!-- <td>
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="invoiceDate" formControlName="invoiceCreation" placeholder="Choose invoice creation date">
+                            <mat-datepicker-toggle matSuffix [for]="invoiceDate"></mat-datepicker-toggle>
+                            <mat-datepicker #invoiceDate></mat-datepicker>
+                         </mat-form-field>
+                    </td> -->
+                <!-- <td>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Invoice Amount" name="invoiceAmount"
+                            formControlName="invoiceAmount">
+                    </mat-form-field>
+                </td> -->
+                <td>
+                    <mat-form-field >
+                        <input matInput placeholder="Contract Status" name="contractStatus"
+                            formControlName="contractStatus" readonly="true">
+                    </mat-form-field>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" class="file-input" formControlName="fileInput"
+       (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+<tr>
+   {{fileName || "No file uploaded yet."}}
+
+    <button mat-mini-fab color="primary" class="upload-btn"
+      (click)="fileUpload.click()">
+        <mat-icon>attach_file</mat-icon>
+    </button></tr>
+    <tr><span *ngIf="isFileUploaded" class="alertMessage">{{uploadMessage}}</span></tr>
+</div>
+
+                    </td>
+                    <td>       </td>
+                    <td>
+                        <mat-card-actions>
+              
+                            <button mat-raised-button [disabled]="contractUpload.invalid" color="primary" (click)="contractCreation()">Create Contract</button>
+                          </mat-card-actions>
+                    </td>
+                    <!-- <td> <mat-card-actions>
+              
+                        <button mat-raised-button  color="primary" (click)="previousPage()">Back</button>
+                      </mat-card-actions></td> -->
+                </tr>
+
+                    
+                    
+                </table>
+            </form>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

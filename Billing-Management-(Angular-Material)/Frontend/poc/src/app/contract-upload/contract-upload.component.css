@@ -1,0 +1,27 @@
+mat-toolbar{
+    background-color: lightcyan;
+    color:blue
+}
+
+/* mat-sidenav{
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background-color: blue;
+    color:white,
+ 
+} */
+/* mat-sidenav-container{
+    height: calc(100vh-65px);
+} */
+.file-input {
+    display: none;
+  }
+  .alertMessage{
+      color:red;
+  }
+ 
+  
+  .spacer{
+    flex: auto;
+}

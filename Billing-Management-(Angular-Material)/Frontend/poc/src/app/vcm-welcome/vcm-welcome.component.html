@@ -1,0 +1,34 @@
+<header align="center"><h2 style="font-weight: bolder;">Hello Welcome to BizEx Platform</h2></header>
+<div class="content" *ngIf="loginService.isVCM()">
+    <mat-card class="mat-elevation-z8" style="background-color: khaki;">
+        <mat-card-header>
+            <mat-card-title>
+                Approved Contracts
+            </mat-card-title>
+            <mat-card-content>
+                <mat-icon>thumb_up_alt</mat-icon>
+                <br>
+                <p style="font-weight: bolder;">{{approvedContracts}}</p>
+            </mat-card-content>
+        </mat-card-header>
+    </mat-card>
+</div>
+<div class="content1" *ngIf="loginService.isVCM()">
+    <mat-card class="mat-elevation-z8" style="background-color: khaki;">
+        <mat-card-header>
+            <mat-card-title>
+                Pending Contracts
+            </mat-card-title>
+
+            
+            <mat-card-content>
+                <mat-icon>access_time</mat-icon>
+                <br>
+                <p style="font-weight: bolder;">{{pendingContracts}}</p>
+            </mat-card-content>
+        </mat-card-header>
+    </mat-card>
+</div>
+
+
+

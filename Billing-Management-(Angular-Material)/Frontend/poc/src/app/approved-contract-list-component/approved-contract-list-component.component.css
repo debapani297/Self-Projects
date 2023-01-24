@@ -1,0 +1,11 @@
+.spacer{
+    flex: auto;
+}
+
+mat-toolbar{
+    background-color: lightcyan;
+    color: blue;
+}
+table{
+    width: 100%;
+}

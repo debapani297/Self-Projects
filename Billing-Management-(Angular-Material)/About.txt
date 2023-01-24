@@ -1,0 +1,8 @@
+*********************************************
+************ Billing Management *************
+*********************************************
+
+* This is an Angular web application created for managing Business exchange activities between Many-to-Many Clients and Vendors where one party’s contracts, invoices, payments with another party are managed. 
+* Developed backend restful APIs in Spring boot, design web application with Angular Material UI and Typescript.
+* Meticulously tested jars/wars with maven & spring boot Junit testing and authored technical document.
+* Used Technologies: HTML5, CSS, Angular, Typescript, Material-UI, Java, Springboot, Rest-APIs, Junit, MySQL.

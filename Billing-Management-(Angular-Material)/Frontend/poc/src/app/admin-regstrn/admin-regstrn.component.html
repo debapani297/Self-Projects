@@ -1,0 +1,47 @@
+ <body>
+  <mat-card class="card">
+   
+    <form [formGroup]="regForm">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Register here!!</h2>
+      </mat-card-title>
+    </mat-card-header>
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Username" name="username" formControlName="user">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password" type="password" name="password" formControlName="pwd">
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <mat-card-actions>
+
+                <div>
+                  <button mat-raised-button (click)="register()" color="primary">Register</button>&nbsp;
+                </div>
+                <br>
+
+              </mat-card-actions>
+            </td>
+          </tr>
+         
+        </table>
+
+    <mat-card-actions>
+    
+    </mat-card-actions>
+  </form>
+  </mat-card>
+</body>
+

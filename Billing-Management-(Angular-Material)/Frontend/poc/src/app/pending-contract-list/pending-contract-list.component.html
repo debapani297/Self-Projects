@@ -1,0 +1,80 @@
+<mat-toolbar >
+  <mat-toolbar-row>
+       Pending Contracts
+     </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-form-field appearance="standard">
+<mat-label>Filter Table</mat-label>
+<input matInput placeholder="" Search (keyup)="applyfilter($event)" type="text" #input/>
+</mat-form-field>
+<div *ngIf="!this.empty" >
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+<ng-container matColumnDef="contractId">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> Contract Number </th>
+  <td mat-cell *matCellDef="let element"> {{element.contractId}} </td>
+</ng-container>
+
+<ng-container matColumnDef="companyClient">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> Client </th>
+  <td mat-cell *matCellDef="let element"> {{element.companyClient}} </td>
+</ng-container> 
+
+<ng-container matColumnDef="companyVendor">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> Vendor </th>
+  <td mat-cell *matCellDef="let element"> {{element.companyVendor}} </td>
+</ng-container> 
+
+<ng-container matColumnDef="amount">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> Amount </th>
+  <td mat-cell *matCellDef="let element"> {{element.amount | currency}} </td>
+</ng-container>
+
+<ng-container matColumnDef="contractRaisedBy">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> Contract Raised By </th>
+  <td mat-cell *matCellDef="let element"> {{element.contractRaisedBy}} </td>
+</ng-container>
+
+<ng-container matColumnDef="status">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
+  <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+</ng-container> 
+
+<ng-container matColumnDef="fromDate">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> From Date </th>
+  <td mat-cell *matCellDef="let element"> {{element.fromDate | date}} </td>
+</ng-container>
+
+<ng-container matColumnDef="toDate">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef> To Date </th>
+  <td mat-cell *matCellDef="let element"> {{element.toDate | date}} </td>
+</ng-container>
+
+<ng-container matColumnDef="balance">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef>  Contract Balance </th>
+  <td mat-cell *matCellDef="let element"> {{element.balance | currency}} </td>
+</ng-container>
+
+<ng-container matColumnDef="action" >
+  <th mat-header-cell *matHeaderCellDef> Action </th>
+  <td mat-cell *matCellDef="let element" > 
+      <div class="example-button-row" *ngIf="this.service.isCCM()">
+          <button mat-raised-button color="primary"(click)="changeStatus(element)">Approve Contract</button>  
+         
+          </div>  
+  </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+<tr *matNoDataRow>
+  <td class="mat-cell" colspan="4">The filter does not match any item in the data for the text {{input.value}}</td>
+</tr>
+</table>
+<mat-paginator [pageSizeOptions]="[2,5,10,20]" aria-label="select page of post"></mat-paginator>
+</div>
+
+
+<mat-card class="mat-elevation-z10" *ngIf="this.empty">
+<h4><b>{{this.errorMessage}}</b></h4></mat-card>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BillingApp-v2-delete&apos; to &apos;BillingApp&apos;" description="Rename resource &apos;BillingApp-v2-delete&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/BillingApp-v2-delete" name="BillingApp" stamp="1674555425977" updateReferences="true"/>
+</session>

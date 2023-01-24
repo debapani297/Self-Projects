@@ -1,0 +1,38 @@
+.card{
+  top: 100px;
+  width: 350px;
+    height: 200px;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;  
+    background-color:rgb(197, 186, 248);
+}
+
+/* .img{
+  background-image:url("/assets/img/background.jpg");
+  src: url("/assets/img/background.jpg");
+} */
+.button{
+  background-color: green;
+  color: white;
+}
+body{
+  margin: 0;
+  padding: 0;
+  /* background-image: url("/assets/img/billing.jpg"); */
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+/* input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+} */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}

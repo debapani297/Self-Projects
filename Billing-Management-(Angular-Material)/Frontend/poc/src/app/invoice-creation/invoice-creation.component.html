@@ -1,0 +1,100 @@
+<h1 mat-dialog-title>Invoice Generation</h1>
+
+<!-- <div class="spacer"></div>
+       <button mat-raised-button color="accent" (click)="logout()">LogOut</button> -->
+
+<div mat-dialog-content>
+
+
+
+
+    <mat-card-content>
+        <mat-card>
+            <form [formGroup]="invoiceDetails" class="example-form">
+                <table>
+                    <tr>
+
+                        <td>
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="invoiceDate" formControlName="invoiceCreationDate"
+                                    placeholder="Choose invoice creation date" readonly="true">
+                                <mat-datepicker-toggle matSuffix [for]="invoiceDate"></mat-datepicker-toggle>
+                                <mat-datepicker #invoiceDate></mat-datepicker>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Invoice Billing to" name="clientCompany"
+                                    formControlName="invoiceBillingTo" readonly="true">
+                            </mat-form-field>
+                        </td>
+
+                        <td>
+
+
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Vendor Company" name="vendorCompany"
+                                    formControlName="invoiceRaisedByCompany" readonly="true">
+                            </mat-form-field>
+
+
+
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Contract Number" name="contractId"
+                                    formControlName="contractNumber" readonly="true">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Invoice Raised By" name="raisedBy"
+                                    formControlName="invoiceRaisedBy" readonly="true">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <!-- change -->
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Invoice Amount" name="invoiceAmount"
+                                    formControlName="invoiceAmount">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="dueDate" formControlName="dueDate"
+                                    placeholder="Choose Due date">
+                                <mat-datepicker-toggle matSuffix [for]="dueDate"></mat-datepicker-toggle>
+                                <mat-datepicker #dueDate></mat-datepicker>
+                            </mat-form-field>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-card-actions>
+
+                                <button mat-raised-button [disabled]="invoiceDetails.invalid" color="primary"
+                                    (click)="invoiceCreation()">Create Invoice</button>
+                            </mat-card-actions>
+                        </td>
+                        <td>
+                            <mat-card-actions>
+
+                                <button mat-raised-button color="primary" mat-dialog-close color="warn">Close</button>
+                            </mat-card-actions>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </mat-card>
+    </mat-card-content>
+
+</div>
